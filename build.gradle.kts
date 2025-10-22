@@ -55,6 +55,9 @@ dependencies {
 
     implementation ("commons-net:commons-net:3.6")
 
+    // Override logback dependencies to fix CVE-2025-11226
+    implementation ("ch.qos.logback:logback-core:1.5.19")
+    implementation ("ch.qos.logback:logback-classic:1.5.19")
 
     testImplementation ("org.junit.jupiter:junit-jupiter-api:5.8.1")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.8.1")
