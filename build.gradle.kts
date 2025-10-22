@@ -55,6 +55,16 @@ dependencies {
 
     implementation ("commons-net:commons-net:3.6")
 
+    // Fix CVE-2024-12801: SSRF vulnerability in logback-core
+    // Force upgrade to patched version
+    constraints {
+        implementation("ch.qos.logback:logback-core:1.2.13") {
+            because("CVE-2024-12801: SSRF vulnerability in SaxEventRecorder")
+        }
+        implementation("ch.qos.logback:logback-classic:1.2.13") {
+            because("CVE-2024-12801: SSRF vulnerability in SaxEventRecorder")
+        }
+    }
 
     testImplementation ("org.junit.jupiter:junit-jupiter-api:5.8.1")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.8.1")
